@@ -1,9 +1,19 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const mongoose = require('mongoose');
+require("dotenv").config();
+
+// const config = require("./config/db.config");
+
+
+const host = "127.0.0.1";
+const port = 3000;
+
+
+
+const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!');
 })
 
 app.get('/users-list', (req, res) => {
@@ -28,5 +38,5 @@ app.get('/users-list/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port ${port}`);
 })
